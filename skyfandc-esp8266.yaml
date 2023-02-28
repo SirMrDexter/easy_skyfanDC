@@ -3,6 +3,7 @@ substitutions:
   device_name: easy-skyfandc #Device name on network
   fan_name: SkyFanDC #Name of fan entity in home assistant
   fan_light: SkyFanDC_Light #Name of light entity in home assistant, if fan has a light
+  light_color: SkyFanDC_Light_Color #Name of light color entity in home assistant, if fan has a light
   temp_name: SkyFanDC-TempNTC #Name of NTC sensor if enabled
   temp_name_tmp117: SkyFanDC-TMP117 #Name of I2C sensor if connected and enabled
 esphome:
@@ -137,8 +138,13 @@ light:
     min_value: 1
     max_value: 5
     switch_datapoint: 15
-    color_temperature_datapoint: 19
-    color_temperature_max_value: 2
-    color_temperature_invert: true
-    cold_white_color_temperature: 6500K
-    warm_white_color_temperature: 3000K
+
+select:
+  - platform: "tuya"
+    name: ${light_color}
+    enum_datapoint: 19
+    optimistic: true
+    options:
+      0: CW
+      1: NW
+      2: WW
