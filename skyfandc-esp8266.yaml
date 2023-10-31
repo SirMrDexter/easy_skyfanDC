@@ -4,6 +4,7 @@ substitutions:
   fan_name: Fan #Name of fan entity in home assistant
   fan_speed: Fan-Speed #Fan speed as number
   fan_light: Light #Name of light entity in home assistant
+  fan_light_d: Light-Dimmer #Name light dimmer entity in home assistant
   light_color: Light-Color #Name of light color entity in home assistant
 esphome:
   name: ${device_name}
@@ -61,10 +62,18 @@ number:
 light:
   - platform: "tuya"
     name: ${fan_light}
-    dimmer_datapoint: 16
+    #dimmer_datapoint: 16
     min_value: 1
     max_value: 5
     switch_datapoint: 15
+
+number:
+  - platform: "tuya"
+    name: ${fan_light_d}
+    number_datapoint: 16
+    min_value: 0
+    max_value: 5
+    step: 1
 
 select:
   - platform: "tuya"
