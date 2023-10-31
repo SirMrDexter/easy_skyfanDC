@@ -51,14 +51,6 @@ fan:
     direction_datapoint: 8
     #speed_count: 6
 
-number:
-  - platform: "tuya"
-    name: ${fan_speed}
-    number_datapoint: 3
-    min_value: 0
-    max_value: 5
-    step: 1
-
 light:
   - platform: "tuya"
     name: ${fan_light}
@@ -68,6 +60,12 @@ light:
     switch_datapoint: 15
 
 number:
+  - platform: "tuya"
+    name: ${fan_speed}
+    number_datapoint: 3
+    min_value: 0
+    max_value: 5
+    step: 1
   - platform: "tuya"
     name: ${fan_light_d}
     number_datapoint: 16
