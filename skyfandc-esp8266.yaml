@@ -50,7 +50,7 @@ fan:
     direction_datapoint: 8
     #speed_count: 6
 
-speed:
+number:
   - platform: "tuya"
     name: ${fan_speed}
     number_datapoint: 3
