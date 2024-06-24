@@ -16,6 +16,9 @@ esphome:
 esp8266:
   board: d1_mini
 
+ota:
+  platform: esphome
+
 api:
 
 # Logger not using the serial port as tuya needs it
