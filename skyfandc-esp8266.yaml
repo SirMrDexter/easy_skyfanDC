@@ -31,7 +31,6 @@ i2c:
   sda: 4
   scl: 5
   scan: true
-ota:
 
 wifi: #See blog post how to change name of device at www.egglec.com.au
   ap:
